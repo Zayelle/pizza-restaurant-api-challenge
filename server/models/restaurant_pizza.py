@@ -16,3 +16,19 @@ class RestaurantPizza(db.Model):
         if value < 1 or value > 30:
             raise ValueError("Price must be between 1 and 30.")
         return value
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'price': self.price,
+            'pizza':{
+                'id': self.pizza_id,
+                'name': self.pizza.name,
+                'ingredients': self.pizza.ingredients
+            },
+            'restaurant': {
+                'id': self.restaurant_id,
+                'name': self.restaurant.name,
+                'address': self.restaurant.address
+            }
+        }

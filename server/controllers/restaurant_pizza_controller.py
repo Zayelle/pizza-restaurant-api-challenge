@@ -33,3 +33,8 @@ def create_restaurant_pizza():
         "pizza": pizza.to_dict(),
         "restaurant": restaurant.to_dict()
     }), 201
+
+@restaurant_pizza_bp.route("/restaurant_pizzas", methods=["GET"])
+def get_restaurant_pizzas():
+    restaurant_pizzas = RestaurantPizza.query.all()
+    return jsonify([rp.to_dict() for rp in restaurant_pizzas]), 200

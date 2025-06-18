@@ -9,3 +9,10 @@ class Pizza(db.Model):
 
     # Relationships
     restaurant_pizzas = db.relationship('RestaurantPizza', backref='pizza')
+
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name,
+            'ingredients': self.ingredients
+        }

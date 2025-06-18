@@ -15,6 +15,12 @@ def create_app():
    for blueprint in all_blueprints:
        app.register_blueprint(blueprint)
 
+   @app.route('/')
+   def index():
+    return {"message": "Pizza Restaurant API is running!"}
+ 
+   
+
    return app  
 
 app = create_app()
