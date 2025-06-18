@@ -4,7 +4,7 @@ A RESTful Flask API for managing restaurants, pizzas, and their relationships. B
 🛠 Setup Instructions
 Clone the Repository:
 
-git clone <your-repo-url>
+git clone <git@github.com:Zayelle/pizza-restaurant-api-challenge.git>
 cd pizza-restaurant-api-challenge
 
 Install Dependencies:
