@@ -1,0 +1,84 @@
+{
+  "info": {
+    "name": "Pizza Restaurant API Challenge",
+    "_postman_id": "d5f3cb3a-6b84-4e2f-9b7f-08a6e9e5eabc",
+    "description": "Test all endpoints for the Pizza Restaurant API Challenge",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get All Restaurants",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/restaurants",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["restaurants"]
+        }
+      }
+    },
+    {
+      "name": "Get One Restaurant",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/restaurants/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["restaurants", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete a Restaurant",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/restaurants/1",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["restaurants", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get All Pizzas",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/pizzas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["pizzas"]
+        }
+      }
+    },
+    {
+      "name": "Create RestaurantPizza",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"price\": 12,\n    \"pizza_id\": 1,\n    \"restaurant_id\": 1\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/restaurant_pizzas",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["restaurant_pizzas"]
+        }
+      }
+    }
+  ]
+}
