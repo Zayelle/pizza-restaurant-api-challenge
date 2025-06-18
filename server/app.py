@@ -1,24 +1,21 @@
 from flask import Flask
 from flask_migrate import Migrate
-from server.models import db
+from server.models import db,Pizza, Restaurant, RestaurantPizza
 from .config import Config
+from server.controllers import all_blueprints
 
 def create_app():
    app = Flask(__name__)
    app.config.from_object(Config)
    db.init_app(app)
    migrate = Migrate(app, db)
+   app.migrate = migrate
 
-#Import models to ensure they are registered
-   from server.models.pizza import Pizza
-   from server.models.restaurant import Restaurant
-   from server.models.restaurant_pizza import RestaurantPizza
+   # Register blueprints
+   for blueprint in all_blueprints:
+       app.register_blueprint(blueprint)
 
-   @app.route('/')
-   def home():
-    return "Hello, Flask is working!"
-   
-   return app
+   return app  
 
 app = create_app()
 if __name__ == "__main__":

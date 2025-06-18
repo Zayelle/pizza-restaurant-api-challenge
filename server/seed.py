@@ -1,5 +1,7 @@
-from server.models import db, Restaurant, Pizza, RestaurantPizza
-from server.app import app
+from server.models import  Restaurant, Pizza, RestaurantPizza
+from server.app import create_app, db
+
+app = create_app()
 
 print("🌱 Seeding database...")
 
